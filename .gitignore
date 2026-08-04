@@ -39,3 +39,5 @@ coverage/
 # Vue CLI cache
 .cache/
 .eslintcache
+
+**/screenshots/
