@@ -9,7 +9,7 @@ module.exports = (_, argv) => ({
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash:8].js',
     clean: true,
-    publicPath: '/',
+    publicPath: process.env.PUBLIC_PATH || '/',
   },
   resolve: {
     extensions: ['.ts', '.js', '.vue'],
