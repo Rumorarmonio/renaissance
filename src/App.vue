@@ -7,8 +7,8 @@
 
 <style lang="scss" scoped>
 .app {
-  margin: 0 auto;
   max-width: 1200px;
+  margin: 0 auto;
   padding: 48px 24px;
 }
 </style>

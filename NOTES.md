@@ -36,6 +36,10 @@
 - Добавлен workflow GitHub Actions для сборки и публикации на GitHub Pages.
 - Подключена базовая SCSS-архитектура в `src/styles/`: глобальный `main.scss` и Sass-only
   facade `_tools.scss` через `sass-loader` `additionalData`.
+- Настроены ESLint, Prettier и Stylelint с профилем для Vue 2.7 + TypeScript + SCSS;
+  добавлены совместимые с Node 16 зависимости и команды проверки.
+- Удалены неиспользуемые интеграции Prettier с ESLint; согласованность `package.json` и
+  `package-lock.json` проверена через `npm ci --dry-run`.
 
 ## Текущие проблемы / открытые вопросы
 

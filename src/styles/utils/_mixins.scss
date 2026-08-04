@@ -48,11 +48,7 @@
   }
 }
 
-@mixin transition(
-  $properties,
-  $duration: $transition,
-  $timing-function: ease
-) {
+@mixin transition($properties, $duration: $transition, $timing-function: ease) {
   transition-property: $properties;
   transition-duration: $duration;
   transition-timing-function: $timing-function;
@@ -107,13 +103,7 @@
   }
 }
 
-@mixin _scrollbar-base(
-  $track,
-  $thumb,
-  $thumb-hover: null,
-  $thumb-active: null,
-  $radius: 10px
-) {
+@mixin _scrollbar-base($track, $thumb, $thumb-hover: null, $thumb-active: null, $radius: 10px) {
   scrollbar-color: $thumb $track;
   scrollbar-width: thin;
 
