@@ -34,8 +34,36 @@ module.exports = (_, argv) => ({
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.module\.s[ac]ss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: `@use '${path.resolve(__dirname, 'src/styles/_tools.scss')}' as *;\n`,
+            },
+          },
+        ],
+      },
+      {
         test: /\.s[ac]ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        exclude: /\.module\.s[ac]ss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: `@use '${path.resolve(__dirname, 'src/styles/_tools.scss')}' as *;\n`,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,

@@ -1,0 +1,27 @@
+// Real colors and fonts should be updated after analyzing the design system of the specific project.
+
+//region Colors
+
+$white: #fff;
+$black: #1f1f1f;
+$grey-light: #d9d9d9;
+$grey: #777;
+$accent: #2563eb;
+$error: #c94938;
+
+//endregion
+
+//region Transition
+
+$transition: 0.3s;
+$transition-short: 0.15s;
+
+//endregion
+
+//region Fonts
+
+// Real font families should be updated after analyzing the design system of the specific project.
+$font-base: Arial, sans-serif;
+$font-title: $font-base;
+
+//endregion

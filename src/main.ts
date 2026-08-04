@@ -2,6 +2,7 @@ import Vue from 'vue'
 import { createPinia, PiniaVuePlugin } from 'pinia'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+import './styles/main.scss'
 
 import App from './App.vue'
 

@@ -1,0 +1,70 @@
+@use 'sass:math';
+@use 'breakpoints' as *;
+
+@function rem($value, $base: 16px) {
+  @if math.is-unitless($value) {
+    @error 'rem() expects a px value, for example rem(16px). Unitless values are not allowed.';
+  }
+
+  @if not math.compatible($value, 1px) {
+    @error 'rem() expects a px value. Received #{math.unit($value)}.';
+  }
+
+  @if math.is-unitless($base) {
+    @error 'rem() expects a px base, for example rem(16px, 16px). Unitless bases are not allowed.';
+  }
+
+  @if not math.compatible($base, 1px) {
+    @error 'rem() expects a px base. Received #{math.unit($base)}.';
+  }
+
+  @return math.div($value, $base) * 1rem;
+}
+
+@function fluid-rem($min, $max, $min-bp: $tablet-768, $max-bp: $desktop-1600, $unit: vw) {
+  @if math.is-unitless($min) or math.is-unitless($max) or math.is-unitless($min-bp) or math.is-unitless($max-bp) {
+    @error 'fluid-rem() expects px values for min, max and breakpoints.';
+  }
+
+  @if not math.compatible($min, 1px) or not math.compatible($max, 1px) or not math.compatible($min-bp, 1px) or not math.compatible($max-bp, 1px) {
+    @error 'fluid-rem() expects px values for min, max and breakpoints.';
+  }
+
+  $slope: math.div($max - $min, $max-bp - $min-bp);
+  $slope-to-unit: _round($slope * 100, 2);
+  $intercept-rem: _round(rem($min - $slope * $min-bp), 2);
+  $min: _round(rem($min), 2);
+  $max: _round(rem($max), 2);
+
+  @return clamp(#{$min}, #{$intercept-rem} + #{$slope-to-unit}#{$unit}, #{$max});
+}
+
+@function fluid-px($min, $max, $min-bp: $tablet-768, $max-bp: $desktop-1600, $unit: vw) {
+  @if math.is-unitless($min) or math.is-unitless($max) or math.is-unitless($min-bp) or math.is-unitless($max-bp) {
+    @error 'fluid-px() expects px values for min, max and breakpoints.';
+  }
+
+  @if not math.compatible($min, 1px) or not math.compatible($max, 1px) or not math.compatible($min-bp, 1px) or not math.compatible($max-bp, 1px) {
+    @error 'fluid-px() expects px values for min, max and breakpoints.';
+  }
+
+  $slope: math.div($max - $min, $max-bp - $min-bp);
+  $slope-to-unit: _round($slope * 100, 2);
+  $intercept-px: _round($min - $slope * $min-bp, 2);
+  $min: _round($min, 2);
+  $max: _round($max, 2);
+
+  @return clamp(#{$min}, #{$intercept-px} + #{$slope-to-unit}#{$unit}, #{$max});
+}
+
+@function _round($number, $decimals: 0) {
+  $n: 1;
+
+  @if $decimals > 0 {
+    @for $i from 1 through $decimals {
+      $n: $n * 10;
+    }
+  }
+
+  @return math.div(math.round($number * $n), $n);
+}

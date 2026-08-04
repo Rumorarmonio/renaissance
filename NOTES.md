@@ -34,6 +34,8 @@
 - Подключены Pinia 2 и Swiper.
 - Добавлены базовые команды запуска, проверки типов и production-сборки.
 - Добавлен workflow GitHub Actions для сборки и публикации на GitHub Pages.
+- Подключена базовая SCSS-архитектура в `src/styles/`: глобальный `main.scss` и Sass-only
+  facade `_tools.scss` через `sass-loader` `additionalData`.
 
 ## Текущие проблемы / открытые вопросы
 

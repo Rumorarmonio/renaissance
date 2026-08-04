@@ -1,0 +1,24 @@
+@use '../utils/media' as *;
+
+:root {
+  --scrollbar-width: 15px;
+  --scrollbar-track: #e5e5e5;
+  --scrollbar-thumb: #a3a3a3;
+  --scrollbar-thumb-hover: #737373;
+  --scrollbar-thumb-active: #525252;
+
+  // Layout values are starter values and should be updated after analyzing the specific design.
+  --padding: 24px;
+  --padding-negative: calc(var(--padding) * -1);
+  --content: 1200px;
+  --content-wide: 1440px;
+  --content-thin: 760px;
+
+  --container: calc(var(--content) + (var(--padding) * 2));
+  --container-wide: calc(var(--content-wide) + (var(--padding) * 2));
+  --container-thin: calc(var(--content-thin) + (var(--padding) * 2));
+
+  @include mobile-767 {
+    --padding: 12px;
+  }
+}
