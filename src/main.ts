@@ -1,0 +1,17 @@
+import Vue from 'vue'
+import { createPinia, PiniaVuePlugin } from 'pinia'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+
+import App from './App.vue'
+
+Vue.use(PiniaVuePlugin)
+Vue.component('Swiper', Swiper)
+Vue.component('SwiperSlide', SwiperSlide)
+
+const pinia = createPinia()
+
+new Vue({
+  pinia,
+  render: (h) => h(App),
+}).$mount('#app')
