@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import BaseSearch from '../BaseSearch/BaseSearch.vue'
+import BaseSearch from '@/components/UI/BaseSearch/BaseSearch.vue'
 
 export default Vue.extend({
   name: 'SiteHeader',

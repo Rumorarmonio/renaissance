@@ -9,20 +9,24 @@
     :type="type"
     @click="$emit('click', $event)"
   >
-    <span
+    <Icon
       v-if="inCart"
       :class="$style.icon"
-      aria-hidden="true"
-    >✓</span>
+      :height="20"
+      name="checkmark"
+      :width="20"
+    />
     <span><slot /></span>
   </button>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import Icon from '../Icon/Icon.vue'
 
 export default Vue.extend({
   name: 'BaseButton',
+  components: { Icon },
   props: {
     disabled: Boolean,
     inCart: Boolean,

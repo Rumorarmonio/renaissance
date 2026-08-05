@@ -19,6 +19,9 @@
 .navigation a,
 .contact a,
 .contact address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-style: normal;
   text-decoration: none;
   white-space: nowrap;

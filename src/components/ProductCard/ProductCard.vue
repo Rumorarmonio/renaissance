@@ -44,8 +44,8 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue'
-import BaseButton from '../BaseButton/BaseButton.vue'
-import { Product } from '../../data/products'
+import { Product } from '@/data/products'
+import BaseButton from '@/components/UI/BaseButton/BaseButton.vue'
 
 export default Vue.extend({
   name: 'ProductCard',

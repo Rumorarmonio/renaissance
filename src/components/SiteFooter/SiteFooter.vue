@@ -19,9 +19,21 @@
         <a
           class="text-0px-h5"
           href="tel:+78125555555"
-        >☎ +7 (812) 555-55-55</a>
+        >
+          <Icon
+            height="16"
+            name="phone"
+            width="16"
+          />
+          <span>+7 (812) 555-55-55</span>
+        </a>
         <address class="text-0px-h5">
-          ⌖ г. Санкт-Петербург, ул. Ефимова, 3
+          <Icon
+            height="16"
+            name="placemark"
+            width="16"
+          />
+          <span>г. Санкт-Петербург, ул. Ефимова, 3</span>
         </address>
       </div>
     </div>
@@ -30,9 +42,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import Icon from '../UI/Icon/Icon.vue'
 
 export default Vue.extend({
   name: 'SiteFooter',
+  components: { Icon },
   data: () => ({
     navigation: [
       { label: 'Каталог', href: '#catalog' },
