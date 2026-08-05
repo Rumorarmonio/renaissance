@@ -1,0 +1,56 @@
+.footer {
+  background-color: #efebec;
+}
+
+.footer > :global(.container) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 96px;
+}
+
+.navigation,
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.navigation a,
+.contact a,
+.contact address {
+  font-style: normal;
+  text-decoration: none;
+  white-space: nowrap;
+  color: $black;
+}
+
+.contact {
+  gap: 32px;
+}
+
+@include tablet-1023 {
+  .footer > :global(.container) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .navigation,
+  .contact {
+    flex-wrap: wrap;
+    gap: 16px 28px;
+  }
+}
+
+@include mobile-767 {
+  .footer > :global(.container) {
+    padding-block: 24px;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

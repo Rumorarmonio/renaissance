@@ -1,0 +1,45 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.catalog {
+  flex: 1 0 auto;
+  padding-block: 48px 80px;
+}
+
+.heading {
+  margin: 0 0 32px;
+}
+
+.grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.empty {
+  margin: 0;
+  color: $grey;
+}
+
+@include laptop-1279 {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include mobile-767 {
+  .catalog {
+    padding-block: 32px 48px;
+  }
+
+  .heading {
+    margin-bottom: 24px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

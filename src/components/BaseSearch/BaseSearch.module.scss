@@ -4,8 +4,6 @@
 }
 
 .label {
-  @include font(16px, 700, 24px, 0, $font-base);
-
   display: block;
   margin-bottom: 10px;
 }
@@ -16,7 +14,6 @@
 }
 
 .input {
-  @include font(14px, 400, 21px, 0, $font-base);
   @include transition(border-color);
 
   flex: 1 1 auto;

@@ -1,5 +1,4 @@
 .button {
-  @include font(14px, 700, 21px, 0, $font-base);
   @include transition(background-color color);
 
   display: inline-flex;

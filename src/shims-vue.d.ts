@@ -3,3 +3,9 @@ declare module '*.vue' {
 
   export default Vue
 }
+
+declare module '*.jpg' {
+  const source: string
+
+  export default source
+}

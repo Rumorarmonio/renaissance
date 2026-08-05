@@ -2,6 +2,7 @@
   <button
     :class="[
       $style.button,
+      'text-0px-h4',
       { [$style.inCart]: inCart },
     ]"
     :disabled="disabled"

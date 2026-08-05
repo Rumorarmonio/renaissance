@@ -5,13 +5,14 @@
     @submit.prevent="$emit('submit', value)"
   >
     <label
+      v-if="label"
       :for="resolvedInputId"
-      :class="$style.label"
+      :class="[$style.label, 'text-0px-h3']"
     >{{ label }}</label>
     <div :class="$style.control">
       <input
         :id="resolvedInputId"
-        :class="$style.input"
+        :class="[$style.input, 'text-0px-h5']"
         :placeholder="placeholder"
         :value="value"
         type="search"
@@ -29,7 +30,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import BaseButton from './BaseButton.vue'
+import BaseButton from '../BaseButton/BaseButton.vue'
 
 let nextSearchId = 0
 

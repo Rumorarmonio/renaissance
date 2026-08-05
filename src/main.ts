@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import './styles/main.scss'
 
-import App from './App.vue'
+import App from './components/App/App.vue'
 
 Vue.use(PiniaVuePlugin)
 Vue.component('Swiper', Swiper)
