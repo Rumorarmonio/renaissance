@@ -1,13 +1,13 @@
-// Real colors and fonts should be updated after analyzing the design system of the specific project.
-
 //region Colors
 
 $white: #fff;
-$black: #1f1f1f;
-$grey-light: #d9d9d9;
-$grey: #777;
-$accent: #2563eb;
-$error: #c94938;
+$black: #403635;
+$grey-light: #e2dddd;
+$grey: #8f8785;
+$accent: #403635;
+$button-hover: #756a67;
+$button-disabled: #bdb4b2;
+$button-in-cart: #633f35;
 
 //endregion
 
@@ -20,8 +20,8 @@ $transition-short: 0.15s;
 
 //region Fonts
 
-// Real font families should be updated after analyzing the design system of the specific project.
-$font-base: Arial, sans-serif;
+// Merriweather is the UI-kit font; the serif fallback keeps the layout usable without local font files.
+$font-base: 'Merriweather', georgia, serif;
 $font-title: $font-base;
 
 //endregion

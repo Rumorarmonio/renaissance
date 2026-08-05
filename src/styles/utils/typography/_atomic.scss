@@ -4,35 +4,27 @@
 //region Headings
 
 @mixin text-0px-h1 {
-  @include font(32px, 500, 1.2, 0, $font-title);
-}
-
-@mixin text-1024px-h1 {
-  @include font(48px, 500, 1.1, 0, $font-title);
+  @include font(24px, 700, 36px, 0, $font-title);
 }
 
 @mixin text-0px-h2 {
-  @include font(28px, 500, 1.2, 0, $font-title);
-}
-
-@mixin text-1024px-h2 {
-  @include font(40px, 500, 1.1, 0, $font-title);
+  @include font(18px, 400, 27px, 0, $font-title);
 }
 
 @mixin text-0px-h3 {
-  @include font(24px, 500, 1.2, 0, $font-title);
-}
-
-@mixin text-1024px-h3 {
-  @include font(32px, 500, 1.15, 0, $font-title);
+  @include font(16px, 700, 24px, 0, $font-title);
 }
 
 @mixin text-0px-h4 {
-  @include font(20px, 500, 1.25, 0, $font-title);
+  @include font(14px, 700, 21px, 0, $font-title);
 }
 
-@mixin text-1024px-h4 {
-  @include font(24px, 500, 1.2, 0, $font-title);
+@mixin text-0px-h5 {
+  @include font(14px, 400, 21px, 0, $font-title);
+}
+
+@mixin text-0px-h6 {
+  @include font(14px, 300, 21px, 0, $font-title);
 }
 
 //endregion
@@ -41,10 +33,6 @@
 
 @mixin text-0px-p1 {
   @include font(18px, 400, 1.5, 0, $font-base);
-}
-
-@mixin text-1024px-p1 {
-  @include font(20px, 400, 1.45, 0, $font-base);
 }
 
 @mixin text-0px-p2 {

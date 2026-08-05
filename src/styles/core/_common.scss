@@ -16,7 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $black;
-  background: $white;
+  background-color: var(--color-surface);
 
   &.locked {
     padding-right: var(--scrollbar-width);

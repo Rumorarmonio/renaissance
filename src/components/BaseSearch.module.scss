@@ -1,0 +1,49 @@
+.search {
+  width: 100%;
+  max-width: 416px;
+}
+
+.label {
+  @include font(16px, 700, 24px, 0, $font-base);
+
+  display: block;
+  margin-bottom: 10px;
+}
+
+.control {
+  display: flex;
+  align-items: stretch;
+}
+
+.input {
+  @include font(14px, 400, 21px, 0, $font-base);
+  @include transition(border-color);
+
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 15px;
+  color: $black;
+  background-color: transparent;
+  border: 1px solid $grey-light;
+  border-right: 0;
+  border-radius: 0;
+
+  @include focus-visible {
+    border-color: $black;
+    outline: 0;
+  }
+
+  &:focus {
+    border-color: $black;
+  }
+
+  &::placeholder {
+    color: $button-disabled;
+    opacity: 1;
+  }
+}
+
+.submit {
+  flex: 0 0 122px;
+}

@@ -1,0 +1,20 @@
+.app {
+  @include container;
+
+  padding-block: 48px 80px;
+}
+
+.section {
+  margin-bottom: 48px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
