@@ -4,11 +4,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 118px;
-  min-height: 48px;
-  padding: 12px 20px;
+  height: 48px;
+  padding-inline: 8px;
+  min-width: 112px;
   white-space: nowrap;
-  color: $white;
+  color: $white-button;
   background-color: $accent;
   border: 0;
   cursor: pointer;
@@ -23,7 +23,7 @@
   }
 
   &:disabled {
-    color: $white;
+    color: $white-button;
     background-color: $button-disabled;
     cursor: not-allowed;
   }

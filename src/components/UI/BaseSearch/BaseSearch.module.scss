@@ -20,7 +20,6 @@
   min-width: 0;
   min-height: 48px;
   padding: 12px 15px;
-  color: $black;
   background-color: transparent;
   border: 1px solid $grey-light;
   border-right: 0;
@@ -36,7 +35,7 @@
   }
 
   &::placeholder {
-    color: $button-disabled;
+    color: $grey-placeholder-text;
     opacity: 1;
   }
 }

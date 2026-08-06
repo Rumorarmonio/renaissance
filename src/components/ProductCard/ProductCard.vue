@@ -27,7 +27,9 @@
           <del
             v-if="product.oldPrice"
             :class="[$style.oldPrice, 'text-0px-h6']"
-          >{{ product.oldPrice }}</del>
+          >
+            {{ product.oldPrice }}
+          </del>
           <strong :class="[$style.price, 'text-0px-h3']">{{ product.price }}</strong>
         </div>
         <BaseButton
