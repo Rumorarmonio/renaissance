@@ -1,4 +1,6 @@
-.details { margin: -32px; }
+.details {
+  margin: -32px;
+}
 
 .image {
   display: block;
@@ -7,13 +9,22 @@
   object-fit: cover;
 }
 
-.info { padding: 24px 32px 32px; }
+.info {
+  padding: 24px 32px 32px;
+}
 
 .artist,
-.description { margin: 0; }
+.description {
+  margin: 0;
+}
 
-.artist { color: $grey; }
-.description { margin-top: 16px; }
+.artist {
+  color: $grey;
+}
+
+.description {
+  margin-top: 16px;
+}
 
 .footer {
   display: flex;
@@ -28,11 +39,24 @@
   flex-direction: column;
 }
 
-.prices del { color: $grey-disabled-text; }
-.prices strong { font-size: 18px; }
+.prices del {
+  color: $grey-disabled-text;
+}
+
+.prices strong {
+  font-size: 18px;
+}
 
 @include mobile-767 {
-  .details { margin: -24px; }
-  .image { height: 240px; }
-  .info { padding: 20px 24px 24px; }
+  .details {
+    margin: -24px;
+  }
+
+  .image {
+    height: 240px;
+  }
+
+  .info {
+    padding: 20px 24px 24px;
+  }
 }

@@ -9,7 +9,7 @@
         :class="$style.image"
         :src="product.image"
         :alt="`${product.title}, ${product.artist}`"
-      >
+      />
     </button>
     <div :class="$style.content">
       <h2 :class="[$style.title, 'text-0px-h2']">

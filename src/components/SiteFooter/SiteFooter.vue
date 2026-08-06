@@ -10,7 +10,8 @@
           :key="item.href"
           class="text-0px-h5"
           :href="item.href"
-        >{{ item.label }}</a>
+          >{{ item.label }}</a
+        >
       </nav>
       <div
         id="contacts"

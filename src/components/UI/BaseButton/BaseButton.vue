@@ -1,10 +1,6 @@
 <template>
   <button
-    :class="[
-      $style.button,
-      'text-0px-h4',
-      { [$style.inCart]: inCart },
-    ]"
+    :class="[$style.button, 'text-0px-h4', { [$style.inCart]: inCart }]"
     :disabled="disabled"
     :type="type"
     @click="$emit('click', $event)"

@@ -34,7 +34,8 @@ export const products: Product[] = [
     artist: 'Леонардо да Винчи',
     image: product2,
     images: [product2, ...productImages.filter((image) => image !== product2)],
-    description: 'Монументальная фреска Леонардо да Винчи, изображающая евангельскую сцену Тайной вечери.',
+    description:
+      'Монументальная фреска Леонардо да Винчи, изображающая евангельскую сцену Тайной вечери.',
     price: '3 000 000 $',
   },
   {
@@ -43,7 +44,8 @@ export const products: Product[] = [
     artist: 'Микеланджело',
     image: product3,
     images: [product3, ...productImages.filter((image) => image !== product3)],
-    description: 'Фрагмент росписи потолка Сикстинской капеллы с изображением прикосновения Бога к Адаму.',
+    description:
+      'Фрагмент росписи потолка Сикстинской капеллы с изображением прикосновения Бога к Адаму.',
     price: '5 000 000 $',
     oldPrice: '6 000 000 $',
   },
@@ -53,7 +55,8 @@ export const products: Product[] = [
     artist: 'Рембрандт',
     image: product4,
     images: [product4, ...productImages.filter((image) => image !== product4)],
-    description: 'Групповой портрет работы Рембрандта, созданный по заказу гильдии хирургов Амстердама.',
+    description:
+      'Групповой портрет работы Рембрандта, созданный по заказу гильдии хирургов Амстердама.',
     price: 'Продана на аукционе',
     sold: true,
   },

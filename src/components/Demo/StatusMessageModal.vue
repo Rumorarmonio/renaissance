@@ -1,10 +1,20 @@
 <template>
   <div :class="$style.root">
-    <div :class="[$style.icon, $style[`${variant}Icon`]]" aria-hidden="true">
+    <div
+      :class="[$style.icon, $style[`${variant}Icon`]]"
+      aria-hidden="true"
+    >
       {{ variant === 'success' ? '✓' : variant === 'error' ? '×' : 'i' }}
     </div>
-    <h2 :class="$style.title">{{ title }}</h2>
-    <p v-if="message" :class="$style.message">{{ message }}</p>
+    <h2 :class="$style.title">
+      {{ title }}
+    </h2>
+    <p
+      v-if="message"
+      :class="$style.message"
+    >
+      {{ message }}
+    </p>
     <button
       :class="$style.button"
       type="button"
@@ -30,13 +40,23 @@ export default Vue.extend({
     params(): StatusMessageModalParams {
       return (this.modalStore.getParams('statusMessage') || {}) as StatusMessageModalParams
     },
-    variant(): string { return this.params.variant || 'success' },
+    variant(): string {
+      return this.params.variant || 'success'
+    },
     title(): string {
       if (this.params.title) return this.params.title
-      return this.variant === 'success' ? 'Операция выполнена' : this.variant === 'error' ? 'Не удалось выполнить операцию' : 'Сообщение'
+      return this.variant === 'success'
+        ? 'Операция выполнена'
+        : this.variant === 'error'
+          ? 'Не удалось выполнить операцию'
+          : 'Сообщение'
     },
-    message(): string { return this.params.hideMessage ? '' : this.params.message || '' },
-    buttonText(): string { return this.params.buttonText || 'Хорошо' },
+    message(): string {
+      return this.params.hideMessage ? '' : this.params.message || ''
+    },
+    buttonText(): string {
+      return this.params.buttonText || 'Хорошо'
+    },
   },
   methods: {
     async handleConfirm(): Promise<void> {

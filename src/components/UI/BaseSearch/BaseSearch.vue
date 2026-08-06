@@ -8,7 +8,8 @@
       v-if="label"
       :for="resolvedInputId"
       :class="[$style.label, 'text-0px-h3']"
-    >{{ label }}</label>
+      >{{ label }}</label
+    >
     <div :class="$style.control">
       <input
         :id="resolvedInputId"
@@ -17,7 +18,7 @@
         :value="value"
         type="search"
         @input="$emit('input', $event.target.value)"
-      >
+      />
       <BaseButton
         :class="$style.submit"
         type="submit"

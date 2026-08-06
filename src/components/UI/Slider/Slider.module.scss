@@ -71,5 +71,7 @@
 }
 
 @include mobile-767 {
-  .slideImage { height: 240px; }
+  .slideImage {
+    height: 240px;
+  }
 }

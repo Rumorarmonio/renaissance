@@ -23,17 +23,22 @@ export const useModalStore = defineStore('modals', {
       this.byId = {
         ...this.byId,
         [modalId]: {
-        isOpen: true,
-        isClosing: false,
-        closeDisabled: false,
-        params,
+          isOpen: true,
+          isClosing: false,
+          closeDisabled: false,
+          params,
         },
       }
     },
     closeModal(modalId: ModalId): void {
       const currentState = this.byId[modalId]
 
-      if (!currentState || !currentState.isOpen || currentState.isClosing || currentState.closeDisabled) {
+      if (
+        !currentState ||
+        !currentState.isOpen ||
+        currentState.isClosing ||
+        currentState.closeDisabled
+      ) {
         return
       }
 

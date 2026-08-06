@@ -25,14 +25,18 @@
             v-if="header"
             :id="`${id}-header`"
             :class="$style.title"
-          >{{ header }}</h2>
+          >
+            {{ header }}
+          </h2>
           <button
             v-if="canClose"
             :class="$style.close"
             aria-label="Закрыть"
             type="button"
             @click="close"
-          >×</button>
+          >
+            ×
+          </button>
         </header>
         <div :class="[$style.content, { [$style.noPadding]: noPadding }]">
           <slot />
@@ -50,7 +54,8 @@ import { ModalState, useModalStore } from '@/stores/modalStore'
 
 let bodyLockCount = 0
 let previousScrollbarWidth = ''
-const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+const focusableSelector =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
 function lockBody(): void {
   if (bodyLockCount === 0) {
@@ -86,6 +91,9 @@ export default Vue.extend({
     noPadding: Boolean,
     noCloseButton: Boolean,
   },
+  data: () => ({
+    focusedElement: null as HTMLElement | null,
+  }),
   computed: {
     modalStore(): ReturnType<typeof useModalStore> {
       return useModalStore()
@@ -121,9 +129,6 @@ export default Vue.extend({
       },
     },
   },
-  data: () => ({
-    focusedElement: null as HTMLElement | null,
-  }),
   beforeDestroy(): void {
     document.removeEventListener('keydown', this.handleKeydown)
 

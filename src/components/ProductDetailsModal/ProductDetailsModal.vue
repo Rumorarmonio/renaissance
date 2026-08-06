@@ -12,13 +12,17 @@
           :class="$style.image"
           :src="image"
           :alt="`${product.title}, изображение ${index + 1}`"
-        >
+        />
       </SwiperSlide>
     </Slider>
 
     <div :class="$style.info">
-      <p :class="$style.artist">{{ product.artist }}</p>
-      <p :class="$style.description">{{ product.description }}</p>
+      <p :class="$style.artist">
+        {{ product.artist }}
+      </p>
+      <p :class="$style.description">
+        {{ product.description }}
+      </p>
       <div :class="$style.footer">
         <div :class="$style.prices">
           <del v-if="product.oldPrice">{{ product.oldPrice }}</del>
@@ -59,10 +63,17 @@ export default Vue.extend({
   }),
   computed: {
     product(): Product | null {
-      return (this.modalStore.getParams('productDetails') as ProductDetailsModalParams | undefined)?.product || null
+      return (
+        (this.modalStore.getParams('productDetails') as ProductDetailsModalParams | undefined)
+          ?.product || null
+      )
     },
     images(): string[] {
-      return this.product?.images?.length ? this.product.images : this.product ? [this.product.image] : []
+      return this.product?.images?.length
+        ? this.product.images
+        : this.product
+          ? [this.product.image]
+          : []
     },
     inCart(): boolean {
       return Boolean(this.product && this.cart.productIds.includes(this.product.id))
