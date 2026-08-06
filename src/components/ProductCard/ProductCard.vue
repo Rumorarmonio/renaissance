@@ -1,13 +1,25 @@
 <template>
   <article :class="[$style.card, { [$style.sold]: product.sold }]">
-    <img
-      :class="$style.image"
-      :src="product.image"
-      :alt="`${product.title}, ${product.artist}`"
+    <button
+      :class="$style.imageButton"
+      type="button"
+      @click="$emit('details', product.id)"
     >
+      <img
+        :class="$style.image"
+        :src="product.image"
+        :alt="`${product.title}, ${product.artist}`"
+      >
+    </button>
     <div :class="$style.content">
       <h2 :class="[$style.title, 'text-0px-h2']">
-        {{ product.title }}
+        <button
+          :class="$style.titleButton"
+          type="button"
+          @click="$emit('details', product.id)"
+        >
+          {{ product.title }}
+        </button>
       </h2>
       <p :class="[$style.artist, 'text-0px-h2']">
         {{ product.artist }}

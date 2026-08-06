@@ -14,20 +14,20 @@
         <h1 :class="[$style.heading, 'text-0px-h1']">
           Картины эпохи Возрождения
         </h1>
-        <section :class="$style.modalDemo" aria-labelledby="modal-demo-title">
-          <h2 id="modal-demo-title" :class="$style.modalDemoTitle">Демонстрация модальных окон</h2>
-          <div :class="$style.modalButtons">
-            <button
-              v-for="button in modalButtons"
-              :key="button.label"
-              :class="$style.modalButton"
-              type="button"
-              @click="button.action"
-            >
-              {{ button.label }}
-            </button>
-          </div>
-        </section>
+        <!--        <section :class="$style.modalDemo" aria-labelledby="modal-demo-title">-->
+        <!--          <h2 id="modal-demo-title" :class="$style.modalDemoTitle">Демонстрация модальных окон</h2>-->
+        <!--          <div :class="$style.modalButtons">-->
+        <!--            <button-->
+        <!--              v-for="button in modalButtons"-->
+        <!--              :key="button.label"-->
+        <!--              :class="$style.modalButton"-->
+        <!--              type="button"-->
+        <!--              @click="button.action"-->
+        <!--            >-->
+        <!--              {{ button.label }}-->
+        <!--            </button>-->
+        <!--          </div>-->
+        <!--        </section>-->
         <div
           v-if="filteredProducts.length"
           :class="$style.grid"
@@ -39,6 +39,7 @@
             :processing="cart.processingIds.includes(product.id)"
             :product="product"
             @buy="buyProduct"
+            @details="openProductDetails"
           />
         </div>
         <p
@@ -96,6 +97,13 @@ export default Vue.extend({
   methods: {
     buyProduct(productId: string): void {
       this.cart.buyProduct(productId)
+    },
+    openProductDetails(productId: string): void {
+      const product = this.products.find((item) => item.id === productId)
+
+      if (product) {
+        openModal('productDetails', { product })
+      }
     },
   },
 })

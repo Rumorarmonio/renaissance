@@ -20,11 +20,16 @@ export type StatusMessageModalParams = {
   onConfirm?: () => void | Promise<void>
 }
 
+export type ProductDetailsModalParams = {
+  product: Product
+}
+
 export type ModalParamsById = {
   demoLeft: undefined
   demoCenter: undefined
   demoRight: undefined
   statusMessage: StatusMessageModalParams
+  productDetails: ProductDetailsModalParams
 }
 
 export type ModalParamsFor<T extends string> = T extends keyof ModalParamsById
@@ -32,3 +37,4 @@ export type ModalParamsFor<T extends string> = T extends keyof ModalParamsById
   : undefined
 
 export type ModalParams = ModalParamsById[keyof ModalParamsById]
+import type { Product } from '@/data/products'

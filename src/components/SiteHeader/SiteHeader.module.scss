@@ -27,7 +27,9 @@
 }
 
 .search {
-  flex: 0 1 416px;
+  @include min-laptop-1024 {
+    flex: 0 1 416px;
+  }
 }
 
 .search :global(.label) {

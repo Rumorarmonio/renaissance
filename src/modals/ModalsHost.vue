@@ -4,7 +4,7 @@
       v-for="modal in modals"
       :id="modal.id"
       :key="modal.id"
-      :header="modal.header"
+      :header="modalHeader(modal.id, modal.header)"
       :no-close-button="modal.noCloseButton"
       :no-padding="modal.noPadding"
       :position="modal.position"
@@ -13,7 +13,6 @@
       <component
         :is="modal.component"
         v-if="isModalOpen(modal.id)"
-        :modal-id="modal.id"
       />
     </Modal>
   </div>
@@ -33,6 +32,13 @@ export default Vue.extend({
     modalStore: useModalStore(),
   }),
   methods: {
+    modalHeader(modalId: string, fallback?: string): string | undefined {
+      if (modalId === 'productDetails') {
+        return this.modalStore.getParams('productDetails')?.product.title || fallback
+      }
+
+      return fallback
+    },
     isModalOpen(modalId: string): boolean {
       return Boolean(this.modalStore.byId[modalId as keyof typeof this.modalStore.byId]?.isOpen)
     },

@@ -3,6 +3,7 @@ import ModalCenter from '@/components/Demo/ModalCenter.vue'
 import ModalLeft from '@/components/Demo/ModalLeft.vue'
 import ModalRight from '@/components/Demo/ModalRight.vue'
 import StatusMessageModal from '@/components/Demo/StatusMessageModal.vue'
+import ProductDetailsModal from '@/components/ProductDetailsModal/ProductDetailsModal.vue'
 import type { ModalBaseProps } from '@/modals/types'
 
 export type ModalDefinition = ModalBaseProps & {
@@ -21,6 +22,13 @@ export const modals = [
     component: StatusMessageModal,
     noPadding: true,
     noCloseButton: true,
+  },
+  {
+    id: 'productDetails',
+    header: 'Информация о картине',
+    position: 'center',
+    width: 'wide',
+    component: ProductDetailsModal,
   },
 ] as const
 

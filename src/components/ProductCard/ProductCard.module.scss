@@ -10,6 +10,15 @@
   object-fit: cover;
 }
 
+.imageButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
 .content {
   min-height: 166px;
   padding: 20px 22px 22px;
@@ -18,6 +27,16 @@
 .title,
 .artist {
   margin: 0;
+}
+
+.titleButton {
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
 .purchase {
