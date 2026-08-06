@@ -33,7 +33,8 @@
 - Инициализирован Webpack-проект на Vue 2.7 и TypeScript.
 - Подключены Pinia 2 и Swiper.
 - Добавлены базовые команды запуска, проверки типов и production-сборки.
-- Добавлен workflow GitHub Actions для сборки и публикации на GitHub Pages.
+- Добавлен workflow GitHub Actions для сборки и публикации на GitHub Pages; перед сборкой
+  выполняется `actions/configure-pages`, а Pages artifact загружается через v4.
 - Подключена базовая SCSS-архитектура в `src/styles/`: глобальный `main.scss` и Sass-only
   facade `_tools.scss` через `sass-loader` `additionalData`.
 - Настроены ESLint, Prettier и Stylelint с профилем для Vue 2.7 + TypeScript + SCSS;
