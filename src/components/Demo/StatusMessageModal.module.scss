@@ -1,0 +1,46 @@
+.root {
+  padding: 32px;
+}
+
+.icon {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.successIcon {
+  color: #2d8a4b;
+}
+
+.errorIcon {
+  color: #bd3838;
+}
+
+.neutralIcon {
+  color: $grey;
+}
+
+.title {
+  margin-top: 24px;
+}
+
+.message {
+  margin-top: 8px;
+}
+
+.button {
+  @include transition(background-color color);
+
+  min-width: 112px;
+  min-height: 48px;
+  margin-top: 24px;
+  padding: 8px 16px;
+  color: $white-button;
+  background-color: $accent;
+  border: 0;
+  cursor: pointer;
+
+  @include hover {
+    background-color: $button-hover;
+  }
+}

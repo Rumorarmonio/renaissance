@@ -1,0 +1,88 @@
+.mask {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  background: rgb(0 0 0 / 40%);
+  backdrop-filter: blur(4px);
+}
+
+.centerMask {
+  align-items: center;
+  justify-content: center;
+}
+
+.leftMask { justify-content: flex-start; }
+.rightMask { justify-content: flex-end; }
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0 12px 40px rgb(0 0 0 / 18%);
+}
+
+.center { max-height: min(90vh, 720px); }
+.thin { width: min(92vw, 420px); }
+.medium { width: min(92vw, 560px); }
+.wide { width: min(92vw, 760px); }
+.full { width: min(96vw, 1200px); }
+.left, .right { height: 100%; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  min-height: 64px;
+  padding: 16px 24px;
+  border-bottom: 1px solid $grey-light;
+}
+
+.title { margin: 0; font-size: 20px; line-height: 1.2; }
+.close {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: $black;
+  font-size: 28px;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+}
+.content { overflow: auto; padding: 32px; }
+.noPadding { padding: 0; }
+
+:global(.modal-center-enter-active), :global(.modal-center-leave-active),
+:global(.modal-left-enter-active), :global(.modal-left-leave-active),
+:global(.modal-right-enter-active), :global(.modal-right-leave-active) {
+  animation-duration: $transition;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+:global(.modal-center-enter-active), :global(.modal-left-enter-active), :global(.modal-right-enter-active) { animation-name: modal-overlay-enter; }
+:global(.modal-center-leave-active), :global(.modal-left-leave-active), :global(.modal-right-leave-active) { animation-name: modal-overlay-leave; }
+:global(.modal-center-enter-active) .modal { animation: modal-dialog-enter $transition ease both; }
+:global(.modal-center-leave-active) .modal { animation: modal-dialog-leave $transition ease both; }
+:global(.modal-left-enter-active) .modal { animation: modal-drawer-enter-left $transition ease both; }
+:global(.modal-left-leave-active) .modal { animation: modal-drawer-leave-left $transition ease both; }
+:global(.modal-right-enter-active) .modal { animation: modal-drawer-enter-right $transition ease both; }
+:global(.modal-right-leave-active) .modal { animation: modal-drawer-leave-right $transition ease both; }
+
+@keyframes modal-dialog-enter { from { transform: translateY(96px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes modal-dialog-leave { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-96px); opacity: 0; } }
+@keyframes modal-overlay-enter { from { background: transparent; backdrop-filter: blur(0); } to { background: rgb(0 0 0 / 40%); backdrop-filter: blur(4px); } }
+@keyframes modal-overlay-leave { from { background: rgb(0 0 0 / 40%); backdrop-filter: blur(4px); } to { background: transparent; backdrop-filter: blur(0); } }
+@keyframes modal-drawer-enter-left { from { transform: translate3d(-100%, 0, 0); opacity: 0; } to { transform: translate3d(0, 0, 0); opacity: 1; } }
+@keyframes modal-drawer-leave-left { from { transform: translate3d(0, 0, 0); opacity: 1; } to { transform: translate3d(-100%, 0, 0); opacity: 0; } }
+@keyframes modal-drawer-enter-right { from { transform: translate3d(100%, 0, 0); opacity: 0; } to { transform: translate3d(0, 0, 0); opacity: 1; } }
+@keyframes modal-drawer-leave-right { from { transform: translate3d(0, 0, 0); opacity: 1; } to { transform: translate3d(100%, 0, 0); opacity: 0; } }
+
+@include mobile-767 {
+  .left, .right { width: 100%; }
+  .content { padding: 24px; }
+}

@@ -13,6 +13,39 @@
   margin: 0 0 32px;
 }
 
+.modalDemo {
+  margin-bottom: 32px;
+  padding: 20px;
+  border: 1px solid $grey-light;
+  background-color: $white;
+}
+
+.modalDemoTitle {
+  margin: 0 0 16px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.modalButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.modalButton {
+  min-width: 160px;
+  min-height: 48px;
+  padding: 8px 16px;
+  color: $white-button;
+  background-color: $accent;
+  border: 0;
+  cursor: pointer;
+
+  @include hover {
+    background-color: $button-hover;
+  }
+}
+
 .grid {
   display: grid;
   gap: 32px;
