@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import spriteUrl from '@/assets/sprite.svg'
 
 export default Vue.extend({
   name: 'UiIcon',
@@ -33,7 +34,7 @@ export default Vue.extend({
       return this.height != null ? this.height : this.size
     },
     href(): string {
-      return `./sprite.svg#icon/${this.name}`
+      return `${spriteUrl}#icon/${this.name}`
     },
     ariaHidden(): boolean | undefined {
       return this.hint ? undefined : true
