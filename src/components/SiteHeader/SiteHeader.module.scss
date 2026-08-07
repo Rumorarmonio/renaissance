@@ -39,8 +39,9 @@
 @include tablet-1023 {
   .header > :global(.container) {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+    gap: 16px;
+    padding-block: 16px;
   }
 
   .navigation {
