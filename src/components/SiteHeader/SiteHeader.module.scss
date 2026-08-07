@@ -16,6 +16,8 @@
   padding-left: 120px;
 
   a {
+    @include transition(color, 0.3s);
+
     text-decoration: none;
     white-space: nowrap;
     color: $black;

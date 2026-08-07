@@ -35,6 +35,14 @@
   white-space: nowrap;
 }
 
+.navigation a {
+  @include transition(color, 0.3s);
+
+  @include hover {
+    color: $button-hover;
+  }
+}
+
 .contact {
   gap: 50px;
 }

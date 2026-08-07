@@ -47,7 +47,7 @@ export const products: Product[] = [
     description:
       'Фрагмент росписи потолка Сикстинской капеллы с изображением прикосновения Бога к Адаму.',
     price: '5 000 000 $',
-    oldPrice: '7 000 000 $',
+    oldPrice: '6 000 000 $',
   },
   {
     id: 'anatomy-lesson',
