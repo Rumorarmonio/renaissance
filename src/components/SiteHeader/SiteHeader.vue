@@ -29,6 +29,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import BaseSearch from '@/components/UI/BaseSearch/BaseSearch.vue'
+import { navigation } from '@/data/navigation'
 
 export default Vue.extend({
   name: 'SiteHeader',
@@ -40,13 +41,7 @@ export default Vue.extend({
     },
   },
   data: () => ({
-    navigation: [
-      { label: 'Каталог', href: '#catalog' },
-      { label: 'Доставка', href: '#delivery' },
-      { label: 'Оплата', href: '#payment' },
-      { label: 'Контакты', href: '#contacts' },
-      { label: 'О компании', href: '#about' },
-    ],
+    navigation,
   }),
 })
 </script>

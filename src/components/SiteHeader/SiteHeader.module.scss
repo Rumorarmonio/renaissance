@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   gap: 48px;
-  margin-right: 32px;
+  padding-left: 120px;
 
   a {
     text-decoration: none;
@@ -47,6 +47,7 @@
   .navigation {
     flex-wrap: wrap;
     gap: 16px 28px;
+    padding-left: 0;
     margin-right: 0;
   }
 
