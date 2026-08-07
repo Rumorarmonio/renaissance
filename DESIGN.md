@@ -104,7 +104,7 @@ font()
 | H5     |        all | Merriweather |   14px |        400 |     21px | `verified` |
 | H6     |        all | Merriweather |   14px |        300 |     21px | `verified` |
 
-Локальных файлов Merriweather нет; используется fallback `georgia, serif`.
+Merriweather подключается через Google Fonts; `georgia, serif` остаётся fallback.
 
 ## Отступы, радиусы, тени
 
