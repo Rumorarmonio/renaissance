@@ -8,16 +8,14 @@
       slot="pagination"
       class="swiper-pagination"
     />
-    <button
+    <BaseButton
       slot="button-prev"
-      class="swiper-button-prev"
-      type="button"
+      :class="[$style.navigationButton, 'swiper-button-prev']"
       aria-label="Предыдущее изображение"
     />
-    <button
+    <BaseButton
       slot="button-next"
-      class="swiper-button-next"
-      type="button"
+      :class="[$style.navigationButton, 'swiper-button-next']"
       aria-label="Следующее изображение"
     />
   </Swiper>
@@ -27,10 +25,11 @@
 import Vue, { PropType } from 'vue'
 import type { SwiperOptions } from 'swiper'
 import { Swiper } from 'vue-awesome-swiper'
+import BaseButton from '../BaseButton/BaseButton.vue'
 
 export default Vue.extend({
   name: 'Slider',
-  components: { Swiper },
+  components: { BaseButton, Swiper },
   props: {
     options: {
       type: Object as PropType<SwiperOptions>,
@@ -42,8 +41,7 @@ export default Vue.extend({
       return {
         watchOverflow: true,
         slidesPerView: 1,
-        effect: 'fade',
-        fadeEffect: { crossFade: true },
+        spaceBetween: 16,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',

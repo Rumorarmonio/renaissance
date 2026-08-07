@@ -46,11 +46,16 @@
 
 :global(.swiper-button-prev),
 :global(.swiper-button-next) {
-  width: 40px;
-  height: 40px;
-  color: $black;
-  background: $white;
-  border: 1px solid $grey-light;
+  @include transition(opacity, 0.3s);
+}
+
+.navigationButton {
+  flex: 0 0 48px;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  padding: 0;
+  font-size: 0;
 }
 
 :global(.swiper-button-prev)::after,
